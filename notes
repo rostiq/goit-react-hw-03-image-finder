@@ -1,0 +1,5 @@
+<div class="overlay" onClick={this.handleClose}>
+  <div class="modal">
+    <img src="${largeImageURL}" alt="${tags}" />
+  </div>
+</div>
