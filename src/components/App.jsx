@@ -56,14 +56,11 @@ export class App extends Component {
 
   handleEnlargeImage = imageURL => {
     this.setState({ showModal: true, imageToEnlarge: imageURL });
-    window.addEventListener('keydown', this.handleCloseModal);
   };
 
-  handleCloseModal = event => {
-    if (event.target === event.currentTarget || event.keyCode === 27)
-      this.setState({ showModal: false });
-    window.removeEventListener('keydown', this.handleCloseModal);
-  };
+  handleCloseModal = () => {
+    this.setState(({ showModal }) => ({ showModal: !showModal }))
+  }; 
 
   render() {
     const { loading, hits, totalHits, imageToEnlarge, showModal } = this.state;
