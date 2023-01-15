@@ -4,7 +4,7 @@ import styles from './Modal.module.css';
 
 export default class Modal extends Component {
   state={
-
+    
   };
 
   componentDidMount() {
@@ -16,7 +16,7 @@ export default class Modal extends Component {
   }
 
   handleEscapeModal = event => {
-    if (event.target === event.currentTarget || event.keyCode === 27)
+    if (event.keyCode === 27)
       this.props.handleCloseModal();
   }
 
@@ -24,8 +24,8 @@ export default class Modal extends Component {
     const { imageToEnlarge, handleCloseModal } = this.props;
     return (
       <>
-          <div className={styles.overlay} onClick={handleCloseModal}>
-              <div className={styles.modal}>
+          <div className={styles.overlay} onClick={handleCloseModal} >
+              <div className={styles.modal} >
                   <img src={imageToEnlarge} alt=""/>
               </div>
           </div>

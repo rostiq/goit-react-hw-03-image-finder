@@ -58,7 +58,8 @@ export class App extends Component {
     this.setState({ showModal: true, imageToEnlarge: imageURL });
   };
 
-  handleCloseModal = () => {
+  handleCloseModal = (event) => {
+    if (event.target === event.currentTarget)
     this.setState(({ showModal }) => ({ showModal: !showModal }))
   }; 
 
